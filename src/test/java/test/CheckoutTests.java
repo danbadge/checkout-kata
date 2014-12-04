@@ -32,4 +32,12 @@ public class CheckoutTests {
         assert checkout.price("ABC") == 100;
         assert checkout.price("BCD") == 65;
     }
+
+    @Test
+    public void itCalculatesDiscounts() {
+        assert checkout.price("AAA") == 130;
+        assert checkout.price("BB") == 45;
+        assert checkout.price("AAAD") == 145;
+        assert checkout.price("AAABB") == 175;
+    }
 }
