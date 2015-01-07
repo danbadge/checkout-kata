@@ -39,5 +39,6 @@ public class CheckoutTests {
         assert checkout.price("BB") == 45;
         assert checkout.price("AAAD") == 145;
         assert checkout.price("AAABB") == 175;
+        assert checkout.price("ACAA") == 150;
     }
 }

@@ -1,5 +1,6 @@
 package checkoutkata;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 public class Checkout {
@@ -35,8 +36,15 @@ public class Checkout {
 
     private Integer GetDeductedAmount(String items) {
         Integer deduction = 0;
+
+        char[] itemsArray = items.toCharArray();
+
+        Arrays.sort(itemsArray);
+
+        String itemsInAlphabeticallyOrder = new String(itemsArray);
+
         for (String key : discounts.keySet()) {
-            if (items.contains(key))
+            if (itemsInAlphabeticallyOrder.contains(key))
                 deduction += discounts.get(key);
         }
         return deduction;
